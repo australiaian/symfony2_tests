@@ -1,0 +1,93 @@
+<h1>TechGroup</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Van_rego</th>
+            <td>{{ entity.vanrego }}</td>
+        </tr>
+        <tr>
+            <th>Location</th>
+            <td>{{ entity.location }}</td>
+        </tr>
+        <tr>
+            <th>Driver</th>
+            <td>{{ entity.driver }}</td>
+        </tr>
+        <tr>
+            <th>Timestamp</th>
+            <td>{{ entity.timestamp|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Make</th>
+            <td>{{ entity.make }}</td>
+        </tr>
+        <tr>
+            <th>Car_year</th>
+            <td>{{ entity.caryear }}</td>
+        </tr>
+        <tr>
+            <th>Odo</th>
+            <td>{{ entity.odo }}</td>
+        </tr>
+        <tr>
+            <th>Vin</th>
+            <td>{{ entity.vin }}</td>
+        </tr>
+        <tr>
+            <th>Condition_description</th>
+            <td>{{ entity.conditiondescription }}</td>
+        </tr>
+        <tr>
+            <th>Fuel_card</th>
+            <td>{{ entity.fuelcard }}</td>
+        </tr>
+        <tr>
+            <th>Tag_time</th>
+            <td>{{ entity.tagtime }}</td>
+        </tr>
+        <tr>
+            <th>Radio_code</th>
+            <td>{{ entity.radiocode }}</td>
+        </tr>
+        <tr>
+            <th>Imarda_tag</th>
+            <td>{{ entity.imardatag }}</td>
+        </tr>
+        <tr>
+            <th>Van_tracker</th>
+            <td>{{ entity.vantracker }}</td>
+        </tr>
+        <tr>
+            <th>Tow_bar</th>
+            <td>{{ entity.towbar }}</td>
+        </tr>
+        <tr>
+            <th>Spare_key</th>
+            <td>{{ entity.sparekey }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('techgroup') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('techgroup_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('techgroup_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

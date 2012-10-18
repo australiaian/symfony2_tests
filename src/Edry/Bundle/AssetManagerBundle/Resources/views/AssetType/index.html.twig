@@ -1,0 +1,45 @@
+<h1>AssetType list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Model</th>
+            <th>Manufacturer</th>
+            <th>Cost</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('assettype_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.name }}</td>
+            <td>{{ entity.category }}</td>
+            <td>{{ entity.model }}</td>
+            <td>{{ entity.manufacturer }}</td>
+            <td>{{ entity.cost }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('assettype_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('assettype_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('assettype_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>

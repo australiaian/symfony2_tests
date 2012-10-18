@@ -1,0 +1,69 @@
+<h1>TechAssets</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Assettype_id</th>
+            <td>{{ entity.assettypeid }}</td>
+        </tr>
+        <tr>
+            <th>Techgroup_id</th>
+            <td>{{ entity.techgroupid }}</td>
+        </tr>
+        <tr>
+            <th>Account_owner</th>
+            <td>{{ entity.accountowner }}</td>
+        </tr>
+        <tr>
+            <th>Serial_number</th>
+            <td>{{ entity.serialnumber }}</td>
+        </tr>
+        <tr>
+            <th>Edry_tag</th>
+            <td>{{ entity.edrytag }}</td>
+        </tr>
+        <tr>
+            <th>Manufacture_data</th>
+            <td>{{ entity.manufacturedata }}</td>
+        </tr>
+        <tr>
+            <th>Condition_description</th>
+            <td>{{ entity.conditiondescription }}</td>
+        </tr>
+        <tr>
+            <th>Asset_value</th>
+            <td>{{ entity.assetvalue }}</td>
+        </tr>
+        <tr>
+            <th>Comments</th>
+            <td>{{ entity.comments }}</td>
+        </tr>
+        <tr>
+            <th>Attachement</th>
+            <td>{{ entity.attachement }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('techassets') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('techassets_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('techassets_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

@@ -1,0 +1,55 @@
+<h1>TechAssets list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Assettype_id</th>
+            <th>Techgroup_id</th>
+            <th>Account_owner</th>
+            <th>Serial_number</th>
+            <th>Edry_tag</th>
+            <th>Manufacture_data</th>
+            <th>Condition_description</th>
+            <th>Asset_value</th>
+            <th>Comments</th>
+            <th>Attachement</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('techassets_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.assettypeid }}</td>
+            <td>{{ entity.techgroupid }}</td>
+            <td>{{ entity.accountowner }}</td>
+            <td>{{ entity.serialnumber }}</td>
+            <td>{{ entity.edrytag }}</td>
+            <td>{{ entity.manufacturedata }}</td>
+            <td>{{ entity.conditiondescription }}</td>
+            <td>{{ entity.assetvalue }}</td>
+            <td>{{ entity.comments }}</td>
+            <td>{{ entity.attachement }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('techassets_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('techassets_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('techassets_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
