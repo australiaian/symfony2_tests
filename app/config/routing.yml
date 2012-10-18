@@ -1,7 +1,7 @@
 edry_asset_manager:
     resource: "@EdryAssetManagerBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /assetmanager
 
 # Internal routing configuration to handle ESI
 #_internal:
