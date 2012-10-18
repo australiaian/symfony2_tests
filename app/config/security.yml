@@ -14,7 +14,7 @@ security:
         in_memory:
             memory:
                 users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+                    edry:  { password: mapper, roles: [ 'ROLE_USER' ] }
                     admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
@@ -23,17 +23,17 @@ security:
             security: false
 
         login:
-            pattern:  ^/demo/secured/login$
+            pattern:  ^/assetmanager/user/login$
             security: false
 
         secured_area:
-            pattern:    ^/demo/secured/
+            pattern:    ^/
             form_login:
-                check_path: /demo/secured/login_check
-                login_path: /demo/secured/login
+                check_path: /assetmanager/user/login_check
+                login_path: /assetmanager/user/login
             logout:
-                path:   /demo/secured/logout
-                target: /demo/
+                path:   /assetmanager/user/logout
+                target: /assetmanager/
             #anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
