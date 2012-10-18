@@ -1,32 +1,35 @@
-<h1>TechGroup list</h1>
+{% extends 'EdryAssetManagerBundle::layout.html.twig' %}
+
+{% block title %}Tech Groups{% endblock %}
+
+
+{% block content %}
+<h1>Tech Groups</h1>
 
 <table class="records_list">
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Van_rego</th>
+            <th>Van rego</th>
             <th>Location</th>
             <th>Driver</th>
-            <th>Timestamp</th>
+            <th>Last Edited</th>
             <th>Make</th>
-            <th>Car_year</th>
+            <th>Year Manf.</th>
             <th>Odo</th>
             <th>Vin</th>
-            <th>Condition_description</th>
-            <th>Fuel_card</th>
-            <th>Tag_time</th>
-            <th>Radio_code</th>
-            <th>Imarda_tag</th>
-            <th>Van_tracker</th>
-            <th>Tow_bar</th>
-            <th>Spare_key</th>
-            <th>Actions</th>
+            <th>Condition</th>
+            <th>Fuel card</th>
+            <th>Tag time</th>
+            <th>Radio code</th>
+            <th>Imarda tag</th>
+            <th>Van tracker</th>
+            <th>Tow bar</th>
+            <th>Spare key</th>
         </tr>
     </thead>
     <tbody>
     {% for entity in entities %}
         <tr>
-            <td><a href="{{ path('techgroup_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
             <td>{{ entity.vanrego }}</td>
             <td>{{ entity.location }}</td>
             <td>{{ entity.driver }}</td>
@@ -65,3 +68,4 @@
         </a>
     </li>
 </ul>
+{% endblock %}

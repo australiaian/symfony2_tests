@@ -1,4 +1,9 @@
-<h1>TechGroup edit</h1>
+{% extends 'EdryAssetManagerBundle::layout.html.twig' %}
+
+{% block title %}Edit Tech Group{% endblock %}
+
+
+{% block content %}<h1>Edit Tech Group</h1>
 
 <form action="{{ path('techgroup_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
     {{ form_widget(edit_form) }}
@@ -20,3 +25,4 @@
         </form>
     </li>
 </ul>
+{% endblock %}

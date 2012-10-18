@@ -13,14 +13,14 @@ use Edry\Bundle\AssetManagerBundle\Form\TechAssetsType;
 /**
  * TechAssets controller.
  *
- * @Route("/techassets")
+ * @Route("")
  */
 class TechAssetsController extends Controller
 {
     /**
      * Lists all TechAssets entities.
      *
-     * @Route("/", name="techassets")
+     * @Route("", name="techassets")
      * @Template()
      */
     public function indexAction()

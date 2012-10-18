@@ -1,13 +1,15 @@
-<h1>TechGroup</h1>
+{% extends 'EdryAssetManagerBundle::layout.html.twig' %}
+
+{% block title %}Tech Groups{% endblock %}
+
+
+{% block content %}
+<h1>Tech Groups</h1>
 
 <table class="record_properties">
     <tbody>
         <tr>
-            <th>Id</th>
-            <td>{{ entity.id }}</td>
-        </tr>
-        <tr>
-            <th>Van_rego</th>
+            <th>Van Rego</th>
             <td>{{ entity.vanrego }}</td>
         </tr>
         <tr>
@@ -19,15 +21,15 @@
             <td>{{ entity.driver }}</td>
         </tr>
         <tr>
-            <th>Timestamp</th>
+            <th>Edited last</th>
             <td>{{ entity.timestamp|date('Y-m-d H:i:s') }}</td>
         </tr>
         <tr>
-            <th>Make</th>
+            <th>Make of Van</th>
             <td>{{ entity.make }}</td>
         </tr>
         <tr>
-            <th>Car_year</th>
+            <th>Year of Manf.</th>
             <td>{{ entity.caryear }}</td>
         </tr>
         <tr>
@@ -39,35 +41,35 @@
             <td>{{ entity.vin }}</td>
         </tr>
         <tr>
-            <th>Condition_description</th>
+            <th>Condition</th>
             <td>{{ entity.conditiondescription }}</td>
         </tr>
         <tr>
-            <th>Fuel_card</th>
+            <th>Fuel card</th>
             <td>{{ entity.fuelcard }}</td>
         </tr>
         <tr>
-            <th>Tag_time</th>
+            <th>Tag time</th>
             <td>{{ entity.tagtime }}</td>
         </tr>
         <tr>
-            <th>Radio_code</th>
+            <th>Radio code</th>
             <td>{{ entity.radiocode }}</td>
         </tr>
         <tr>
-            <th>Imarda_tag</th>
+            <th>Imarda tag</th>
             <td>{{ entity.imardatag }}</td>
         </tr>
         <tr>
-            <th>Van_tracker</th>
+            <th>Van tracker</th>
             <td>{{ entity.vantracker }}</td>
         </tr>
         <tr>
-            <th>Tow_bar</th>
+            <th>Tow bar?</th>
             <td>{{ entity.towbar }}</td>
         </tr>
         <tr>
-            <th>Spare_key</th>
+            <th>Spare key</th>
             <td>{{ entity.sparekey }}</td>
         </tr>
     </tbody>
@@ -91,3 +93,4 @@
         </form>
     </li>
 </ul>
+{% endblock %}

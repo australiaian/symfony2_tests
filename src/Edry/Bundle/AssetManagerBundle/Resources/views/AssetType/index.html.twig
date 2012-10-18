@@ -1,9 +1,14 @@
+{% extends 'EdryAssetManagerBundle::layout.html.twig' %}
+
+{% block title %}View Assets{% endblock %}
+
+
+{% block content %}
 <h1>AssetType list</h1>
 
 <table class="records_list">
     <thead>
         <tr>
-            <th>Id</th>
             <th>Name</th>
             <th>Category</th>
             <th>Model</th>
@@ -15,7 +20,6 @@
     <tbody>
     {% for entity in entities %}
         <tr>
-            <td><a href="{{ path('assettype_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
             <td>{{ entity.name }}</td>
             <td>{{ entity.category }}</td>
             <td>{{ entity.model }}</td>
@@ -43,3 +47,4 @@
         </a>
     </li>
 </ul>
+{% endblock %}

@@ -1,4 +1,10 @@
-<h1>TechGroup creation</h1>
+{% extends 'EdryAssetManagerBundle::layout.html.twig' %}
+
+{% block title %}New Tech Group{% endblock %}
+
+
+{% block content %}
+<h1>New Tech Group</h1>
 
 <form action="{{ path('techgroup_create') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
@@ -14,3 +20,4 @@
         </a>
     </li>
 </ul>
+{% endblock %}

@@ -1,4 +1,9 @@
-<h1>TechAssets creation</h1>
+{% extends 'EdryAssetManagerBundle::layout.html.twig' %}
+
+{% block title %}New Asset{% endblock %}
+
+{% block content %}
+<h1>New Asset</h1>
 
 <form action="{{ path('techassets_create') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
@@ -14,3 +19,4 @@
         </a>
     </li>
 </ul>
+{% endblock %}

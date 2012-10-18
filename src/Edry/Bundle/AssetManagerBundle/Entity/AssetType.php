@@ -183,7 +183,7 @@ class AssetType
     }
     
     public function __toString(){
-	    return $this->category;
+	    return $this->name;
     }
     
     

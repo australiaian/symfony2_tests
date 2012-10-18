@@ -1,26 +1,29 @@
-<h1>TechAssets list</h1>
+{% extends 'EdryAssetManagerBundle::layout.html.twig' %}
+
+{% block title %}View Assets{% endblock %}
+
+{% block content %}
+<h1>View Assets</h1>
 
 <table class="records_list">
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Assettype_id</th>
-            <th>Techgroup_id</th>
-            <th>Account_owner</th>
-            <th>Serial_number</th>
-            <th>Edry_tag</th>
-            <th>Manufacture_date</th>
-            <th>Condition_description</th>
-            <th>Asset_value</th>
+            <th>Asset Type</th>
+            <th>Tech Group</th>
+            <th>Owner</th>
+            <th>Serial No.</th>
+            <th>Edry tag</th>
+            <th>Manf. date</th>
+            <th>Condition</th>
+            <th>Value</th>
             <th>Comments</th>
             <th>Attachement</th>
-            <th>Actions</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
     {% for entity in entities %}
         <tr>
-            <td><a href="{{ path('techassets_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
             <td>{{ entity.assettypeid }}</td>
             <td>{{ entity.techgroupid }}</td>
             <td>{{ entity.accountowner }}</td>
@@ -53,3 +56,4 @@
         </a>
     </li>
 </ul>
+{% endblock %}

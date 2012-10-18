@@ -1,41 +1,43 @@
-<h1>TechAssets</h1>
+{% extends 'EdryAssetManagerBundle::layout.html.twig' %}
+
+{% block title %}Asset{% endblock %}
+
+
+{% block content %}
+<h1>View Asset</h1>
 
 <table class="record_properties">
     <tbody>
         <tr>
-            <th>Id</th>
-            <td>{{ entity.id }}</td>
-        </tr>
-        <tr>
-            <th>Assettype_id</th>
+            <th>Asset Type</th>
             <td>{{ entity.assettypeid }}</td>
         </tr>
         <tr>
-            <th>Techgroup_id</th>
+            <th>Tech Group</th>
             <td>{{ entity.techgroupid }}</td>
         </tr>
         <tr>
-            <th>Account_owner</th>
+            <th>Owner</th>
             <td>{{ entity.accountowner }}</td>
         </tr>
         <tr>
-            <th>Serial_number</th>
+            <th>Serial number</th>
             <td>{{ entity.serialnumber }}</td>
         </tr>
         <tr>
-            <th>Edry_tag</th>
+            <th>Edry tag</th>
             <td>{{ entity.edrytag }}</td>
         </tr>
         <tr>
-            <th>Manufacture_date</th>
+            <th>Manf. date</th>
             <td>{{ entity.manufacturedate }}</td>
         </tr>
         <tr>
-            <th>Condition_description</th>
+            <th>Condition</th>
             <td>{{ entity.conditiondescription }}</td>
         </tr>
         <tr>
-            <th>Asset_value</th>
+            <th>Value</th>
             <td>{{ entity.assetvalue }}</td>
         </tr>
         <tr>
@@ -67,3 +69,4 @@
         </form>
     </li>
 </ul>
+{% endblock %}
