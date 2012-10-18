@@ -181,4 +181,10 @@ class AssetType
     {
         return $this->cost;
     }
+    
+    public function __toString(){
+	    return $this->category;
+    }
+    
+    
 }

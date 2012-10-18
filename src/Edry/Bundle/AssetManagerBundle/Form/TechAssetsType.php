@@ -11,12 +11,12 @@ class TechAssetsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('assettype_id')
-            ->add('techgroup_id')
+            ->add('assettype_id') //, 'entity', array('class' => 'EdryAssetManagerBundle:AssetType', 'property' => 'category', 'multiple' => 'false', 'expanded' => 'true'))
+            ->add('techgroup_id') //, 'entity', array('class' => 'EdryAssetManagerBundle:TechGroup', 'property' => 'location'))
             ->add('account_owner')
             ->add('serial_number')
             ->add('edry_tag')
-            ->add('manufacture_data')
+            ->add('manufacture_date')
             ->add('condition_description')
             ->add('asset_value')
             ->add('comments')

@@ -3,6 +3,7 @@
 namespace Edry\Bundle\AssetManagerBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Edry\Bundle\AssetManagerBundle\Entity\TechAssets
@@ -20,20 +21,6 @@ class TechAssets
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @var integer $assettype_id
-     *
-     * @ORM\Column(name="assettype_id", type="integer")
-     */
-    private $assettype_id;
-
-    /**
-     * @var integer $techgroup_id
-     *
-     * @ORM\Column(name="techgroup_id", type="integer")
-     */
-    private $techgroup_id;
 
     /**
      * @var string $account_owner
@@ -57,11 +44,11 @@ class TechAssets
     private $edry_tag;
 
     /**
-     * @var string $manufacture_data
+     * @var string $manufacture_date
      *
-     * @ORM\Column(name="manufacture_data", type="string", length=255)
+     * @ORM\Column(name="manufacture_date", type="string", length=255)
      */
-    private $manufacture_data;
+    private $manufacture_date;
 
     /**
      * @var string $condition_description
@@ -218,26 +205,26 @@ class TechAssets
     }
 
     /**
-     * Set manufacture_data
+     * Set manufacture_date
      *
-     * @param string $manufactureData
+     * @param string $manufactureDate
      * @return TechAssets
      */
-    public function setManufactureData($manufactureData)
+    public function setManufactureDate($manufactureDate)
     {
-        $this->manufacture_data = $manufactureData;
+        $this->manufacture_date = $manufactureDate;
     
         return $this;
     }
 
     /**
-     * Get manufacture_data
+     * Get manufacture_date
      *
      * @return string 
      */
-    public function getManufactureData()
+    public function getManufactureDate()
     {
-        return $this->manufacture_data;
+        return $this->manufacture_date;
     }
 
     /**
@@ -331,4 +318,25 @@ class TechAssets
     {
         return $this->attachement;
     }
+    
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="AssetType")
+     * @ORM\JoinColumn(name="assettype_id", referencedColumnName="id")
+     */
+    private $assettype_id;
+    
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="TechGroup")
+     * @ORM\JoinColumn(name="techgroup_id", referencedColumnName="id")
+     */
+    private $techgroup_id;
+    
+    
+    public function __construct()
+    {
+	    $this->techgroup_id = new ArrayCollection();
+	    $this->assetttype_id = new ArrayCollection();
+    }    
 }

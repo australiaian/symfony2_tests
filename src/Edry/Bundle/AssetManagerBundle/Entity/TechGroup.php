@@ -511,4 +511,9 @@ class TechGroup
     {
         return $this->spare_key;
     }
+    
+    public function __toString(){
+	    return $this->location;
+    }
+    
 }
